@@ -4,7 +4,8 @@ export const useRequest = async<T = any> (url: string, options?: UseFetchOptions
   // data 返回的response(ref对象)
   // error 返回的错误对象(ref对象)
   const { data, error } = await useFetch<any>(url, {
-    baseURL: 'http://interview-api-t.itheima.net/h5',
+    // Nuxt项目部署时要求Http协议是https
+    baseURL: 'https://interview-api-t.itheima.net/h5',
     headers: {
       Authorization: `Bearer ${getToken()}`,
     },
